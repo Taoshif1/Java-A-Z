@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        for(int i=2; i <=31; i++){
+           System.out.print((i % 2 != 0) ? i + " " : "");
+        }
+    }
+}
