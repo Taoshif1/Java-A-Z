@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter radius: ");
+        double radius = scan.nextDouble();
+        
+        System.out.println("Perimeter: "+(2*3.1416*radius)+"\nArea is: "+(3.1416*(radius*radius)));
+    }
+}
