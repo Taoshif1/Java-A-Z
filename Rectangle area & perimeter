@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter width: ");
+        double width = scan.nextDouble();
+        
+        System.out.print("Enter height: ");
+        double height = scan.nextDouble();
+
+        System.out.println("Area is "+width+"*"+height+"= "+(width*height));
+        System.out.println("perimeter is 2*("+width+"+"+height+")= "+(2*(height+width)));
+    }
+}
