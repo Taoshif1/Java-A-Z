@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        int a = (int)(Math.random()*10);
+        int b = (int)(Math.random()*10);
+        
+        if(a>b){
+            System.out.println("What is "+a+"- "+b+"?");
+            
+            int answer = scan.nextInt();
+        
+        if(answer==(a-b)){
+            System.out.println("Correct");
+        }else
+            System.out.println("Incorrect");
+        }
+        else
+            System.out.println("Invalid");
+    }
+}
