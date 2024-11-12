@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter a Character:");
+        char ch = scan.next().charAt(0) ;
+        
+        if( Character.isUpperCase(ch)){
+            ch= Character.toLowerCase(ch);
+        }else if(Character.isLowerCase(ch)){
+            ch= Character.toUpperCase(ch);
+        }
+        System.out.println(""+ch);
+    }
+}
