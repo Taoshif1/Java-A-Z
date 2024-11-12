@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+    
+        System.out.print("Enter a String: ");
+        String input = scan.nextLine();
+        
+        String reversed = new StringBuilder(input).reverse().toString();
+        
+        if(input.equals(reversed)){
+            System.out.println("Palindrome");
+        }else
+            System.out.println("Not a Palindrome");    
+    }
+}
