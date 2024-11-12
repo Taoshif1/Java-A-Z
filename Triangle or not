@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter value of first side: ");
+        int side1= scan.nextInt();
+        
+        System.out.print("Enter value of second side: ");
+        int side2= scan.nextInt();
+
+
+        System.out.print("Enter value of third side: ");
+        int side3= scan.nextInt();
+
+        int sum = 0;
+        if ((side1+side2>side3)&&(side2+side3>side1)&&(side1+side3>side2)) {
+            System.out.println("Triangle");
+            
+        }
+        else
+            System.out.print("Not a triangle");
+    }
+}
