@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args){
+        
+        Scanner scan= new Scanner(System.in);
+        
+        System.out.print("Enter first number: ");
+        int a = scan.nextInt();
+        
+        System.out.print("Enter second number: ");
+        int b = scan.nextInt();
+
+        int temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println("After swapping, first number is: " + a);
+        System.out.println("After swapping, second number is: " + b);
+    }
+}
