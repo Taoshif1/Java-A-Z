@@ -1,18 +1,17 @@
 import java.util.Scanner;
 
-public class ExecutionFile {
+public class ExecutionFile{
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scan= new Scanner(System.in);
+        
         System.out.print("Enter a number: ");
-        int num = scan.nextInt();
+        int num1 = scan.nextInt();
+        int sum = 0;
         
-        int lastDigit = num % 10;
-        int firstDigit = num;
-        
-        while (firstDigit >= 10) {
-            firstDigit /= 10;
+        while(num1 > 0){
+            sum += num1% 10;
+            num1 /=10;
         }
-        
-        System.out.println("First digit: " + firstDigit + "\nLast digit: " + lastDigit);
+        System.out.println("Sum: "+sum);
     }
 }
