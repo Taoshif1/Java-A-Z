@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan= new Scanner(System.in);
+        
+        System.out.print("Enter a character: ");
+        char ch1 = scan.next().charAt(0);
+        
+        if((ch1=='a')||(ch1=='e')||(ch1=='i')||(ch1=='o')||(ch1=='u')){
+            System.out.println("Vowel");
+        }else
+            System.out.println("Consonant");
+    }
+}
