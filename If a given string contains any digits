@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        checkForDigits(input);
+    }
+
+    public static void checkForDigits(String str) {
+        boolean hasDigit = false;
+        
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isDigit(str.charAt(i))) {
+                hasDigit = true;
+                break;
+            }
+        }
+
+        if (hasDigit) {
+            System.out.println("Contains digit");
+        } else {
+            System.out.println("No digits found");
+        }
+    }
+}
