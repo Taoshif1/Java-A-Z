@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Enter Array Size: ");
+        int n = scan.nextInt();
+        
+        //Declaring & value input
+        int[] a = new int[n];
+        for(int i=0; i<n; i++){
+            a[i] = scan.nextInt();
+        }
+        //Even-odd counter for array size
+        int even = 0;
+        int odd = 0;
+        
+        for(int num: a){
+            if(num%2==0){
+                even++;
+            }else{
+                odd++;
+            }
+        }
+        //Initialize arrays to hold odd and even numbers
+        int[] evenArray = new int[even];
+        int[] oddArray = new int[odd];
+        
+        // Reset counters to use as indices
+        int evenIndex = 0;
+        int oddIndex = 0;
+        
+        //Populate the even and odd arrays
+        for(int num : a){
+            if(num%2==0){
+                evenArray[evenIndex++] = num;
+            }else{
+                oddArray[oddIndex++] = num;
+            }
+        }
+         // Output the results
+         System.out.println("Even numbers:");
+         for(int num: evenArray){
+             System.out.println(num+ " ");
+         }
+         System.out.println("\nOdd Numbers: ");
+         for(int num: oddArray){
+             System.out.println(num+ " ");
+         }
+    }
+}
