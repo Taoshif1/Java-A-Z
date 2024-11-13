@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter the size of the array: ");
+        int n = scan.nextInt();
+        
+        double[] a = new double[n];
+        System.out.println("Enter " +n+ " elements:");
+        for (int i = 0; i < n; i++) {
+            a[i] = scan.nextDouble();
+        }
+        double largest = a[0];
+        double smallest = a[0];
+        
+        for (double num : a) {
+            if (num > largest) {
+                largest = num;
+            }
+            if (num < smallest) {
+                smallest = num;
+            }
+        }
+        System.out.println("Largest element is: " + largest);
+        System.out.println("Smallest element is: " + smallest);
+    }
+}
