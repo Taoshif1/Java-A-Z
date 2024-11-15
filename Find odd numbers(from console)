@@ -1,17 +1,27 @@
 import java.util.Scanner;
 
-public class ExecutionFile{
+public class ExecutionFile {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        
-        System.out.print("Enter first number, m: ");
+
+        System.out.print("Enter m: ");
         int m = scan.nextInt();
-        
-         System.out.print("Enter second number, n: ");
+
+        System.out.print("Enter n: ");
         int n = scan.nextInt();
-        
-        for(int i=m; i <=n; i++){
-           System.out.print((i % 2 != 0) ? i + " " : "");
+
+        if (m > n){
+            for (int i = n; i <= m; i++) {
+                if (i % 2 != 0){
+                    System.out.println(i);
+                }
+            }
+        } else {
+            for (int i = m; i <= n; i++) {
+                if (i % 2 != 0){ 
+                    System.out.println(i);
+                }
+            }
         }
     }
 }
