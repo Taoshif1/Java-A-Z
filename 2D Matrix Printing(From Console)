@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        // Matrix Input
+        System.out.print("Enter the number of rows: ");
+        int rows = scan.nextInt();
+        
+        System.out.print("Enter the number of columns: ");
+        int cols = scan.nextInt();
+
+        int[][] matrix = new int[rows][cols];
+
+        // Taking input for matrix
+        System.out.println("Enter the elements of the matrix:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    matrix[i][j] = scan.nextInt();
+                }
+            }
+
+        // Printing the matrix
+        System.out.println("\nMatrix:");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    System.out.print(matrix[i][j] + " ");
+                }
+            System.out.println();
+        }
+    }
+}
