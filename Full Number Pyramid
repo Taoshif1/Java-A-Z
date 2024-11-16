@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = scan.nextInt();
+        
+        for(int i = 1; i <= n; i++){     // Outer loop for rows
+            for (int j = 1; j <= n - i; j++){   // Print spaces for alignment
+                System.out.print("  ");
+            }
+
+        int num = i; // Initialize the starting number of the row
+        for(int j = 1; j <= i; j++){      // Print increasing numbers
+            System.out.print(num++ + " ");
+        }
+
+        num -= 2;    // Adjust to the last printed number before decrementing
+        for(int j = 1; j < i; j++){        // Print decreasing numbers
+            System.out.print(num-- + " ");
+        }
+            System.out.println(); // Move to the next row
+        }
+    }
+}
