@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter n: ");
+        int n= scan.nextInt();
+
+        for(int i = 0; i < n; i++){
+        // Print leading spaces for formatting
+            for(int j = 0; j < n - i; j++){
+                System.out.print(" ");
+            }
+
+        int num = 1; // Initialize the first number in each row
+        for(int j = 0; j <= i; j++) {
+            System.out.print(num + " ");
+            num = num * (i - j) / (j + 1); // Update num for the next element in the row
+        }System.out.println(); // Move to the next line
+       }
+
+    }
+}
