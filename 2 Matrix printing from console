@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter row size: ");
+        int row = scan.nextInt();
+        System.out.print("Enter col size: ");
+        int col = scan.nextInt();
+        int[][] array = new int[row][col];
+        int[][] array1 = new int[row][col];
+        
+        System.out.println("Enter First Array Elements: ");
+            for(int i=0; i<array.length;i++){
+                for(int j= 0; j<array.length; j++){
+                    array[i][j] = scan.nextInt();
+                }
+        }
+            System.out.println("Enter Second Array Elements: ");
+            for(int i=0; i<array.length;i++){
+                for(int j= 0; j<array1.length; j++){
+                    array1[i][j] = scan.nextInt();
+                }
+        }
+            
+           System.out.println("First Matrix: ");
+            for(int i=0; i<array.length;i++){
+                for(int j= 0; j<array.length; j++){
+                    System.out.print(" "+array[i][j]);
+            }System.out.println();
+        }
+            System.out.println("Second Matrix: ");
+                for(int i=0; i<array2.length;i++){
+                    for(int j= 0; j<array2.length; j++){
+                        System.out.print(" "+array1[i][j]);
+            }System.out.println();
+        }
+    }
+}
