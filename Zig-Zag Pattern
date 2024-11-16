@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter n: ");
+        int n= scan.nextInt();
+
+        for(int row = 1; row <= 3; row++){     // Fixed 3 rows for the pattern
+            for (int col = 1; col <= n; col++){    // Loop through all columns
+                if((row + col) % 4 == 0 || (row == 2 && col % 4 == 0)){
+                    System.out.print("*");     // Print star for valid positions
+        }else{
+            System.out.print(" ");       // Print space for invalid positions
+            }
+        }
+        System.out.println();      // Move to the next line after a row
+      }
+    }
+}
