@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter row Size: ");
+        int row = scan.nextInt();
+        
+        System.out.print("Enter col Size: ");
+        int col = scan.nextInt();
+        
+        // Declare 2 matrices of size row x col
+        int[][]array1 = new int[row][col];
+        int[][]array2 = new int[row][col];
+        
+         // Input for array1
+        System.out.println("Value for Matrix1: ");
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < row; j++){
+                System.out.print("Matrix1[" + i + "][" + j + "]: ");
+                array1[i][j] = scan.nextInt();
+            }
+        }
+         // Input for array2
+        System.out.println("Value for Matrix2: ");
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < row; j++){
+                System.out.print("Matrix2[" + i + "][" + j + "]: ");
+                array2[i][j] = scan.nextInt();
+            }
+        }    // Call arraySum() method to add the matrices
+         arraySum(array1, array2, row, col); 
+    }
+     // Method to add two matrices and store the result in sum
+    public static void arraySum(int[][]a1, int[][]a2, int row, int col){
+        
+        int[][] sum = new int[row][col];
+        System.out.println("Sum: ");
+        for(int i = 0; i < row; i++){
+            for(int j = 0;  j< row; j++){
+                sum[i][j]  = a1[i][j] + a2[i][j];
+                    // Print the result
+                    System.out.print(" "+sum[i][j]);
+            }System.out.println();
+        }
+    }
+}
