@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // Input dimensions for Matrix A
+        System.out.print("Enter rows for Matrix A: ");
+        int rowA = scan.nextInt();
+        System.out.print("Enter columns for Matrix A: ");
+        int colA = scan.nextInt();
+
+        // Input dimensions for Matrix B
+        System.out.print("Enter rows for Matrix B: ");
+        int rowB = scan.nextInt();
+        System.out.print("Enter columns for Matrix B: ");
+        int colB = scan.nextInt();
+
+        // Check if multiplication is possible
+        if (colA != rowB) {
+            System.out.println("Matrix multiplication is not possible. Columns of A must equal rows of B.");
+            return; // Exit the program if multiplication is not possible
+        }
+
+        // Create and populate both matrices
+        int[][] matrixA = inputMatrix(scan, rowA, colA, "A");
+        int[][] matrixB = inputMatrix(scan, rowB, colB, "B");
+
+        // Perform matrix multiplication
+        int[][] result = multiplyMatrices(matrixA, matrixB, rowA, colA, colB);
+
+        // Print the result matrix
+        printMatrix(result, "Result");
+    }
+
+    // Method to input matrix values
+    public static int[][] inputMatrix(Scanner scan, int rows, int cols, String matrixName) {
+        int[][] matrix = new int[rows][cols];
+        System.out.println("Enter values for Matrix " + matrixName + ":");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrixName + "[" + i + "][" + j + "]: ");
+                matrix[i][j] = scan.nextInt();
+            }
+        }
+        return matrix;
+    }
+
+    // Method to multiply two matrices
+    public static int[][] multiplyMatrices(int[][] A, int[][] B, int rowA, int colA, int colB) {
+        int[][] result = new int[rowA][colB];
+        for (int i = 0; i < rowA; i++) {       // Iterate through rows of A
+            for (int j = 0; j < colB; j++) {   // Iterate through columns of B
+                for (int k = 0; k < colA; k++) { // Iterate through common dimension
+                    result[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
+    // Method to print a matrix
+    public static void printMatrix(int[][] matrix, String matrixName) {
+        System.out.println(matrixName + " Matrix:");
+        for (int[] row : matrix) {
+            for (int val : row) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+    }
+}
