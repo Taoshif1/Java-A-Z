@@ -1,0 +1,23 @@
+import java.util.Scanner ;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+       
+        System.out.print("Enter a number: ");
+        int number = scan.nextInt();
+        
+        checker(number);  // Calling the method to check if the number is even or odd
+        
+    }
+     // Method to check if the number is even or odd
+    public static void checker(int number){
+        if(number > 0){
+                if(number%2==0){
+                    System.out.print("Even");
+            }   else
+                    System.out.print("Odd");
+        } else   
+            System.out.println("Invalid input. Please enter a positive number.");
+    }
+}
