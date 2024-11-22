@@ -1,0 +1,104 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // Input dimensions for the first matrix
+        System.out.print("Enter rows for Matrix A: ");
+        int rowA = scan.nextInt();
+        System.out.print("Enter columns for Matrix A: ");
+        int colA = scan.nextInt();
+
+        // Input dimensions for the second matrix
+        System.out.print("Enter rows for Matrix B: ");
+        int rowB = scan.nextInt();
+        System.out.print("Enter columns for Matrix B: ");
+        int colB = scan.nextInt();
+
+        // Create and populate both matrices
+        int[][] matrixA = matrixBanao(scan, rowA, colA, "A");
+        int[][] matrixB = matrixBanao(scan, rowB, colB, "B");
+
+        // Ask user to choose an operation
+        System.out.println("\nSelect an operation:");
+        System.out.println("1. Add Matrices");
+        System.out.println("2. Multiply Matrices");
+        System.out.println("3. Perform Both");
+        System.out.print("Your choice: ");
+        int choice = scan.nextInt();
+
+        // Perform operations based on user's choice
+        switch (choice) {
+            case 1:
+                addkoro(matrixA, matrixB, rowA, colA, rowB, colB);
+                break;
+            case 2:
+                gunkoro(matrixA, matrixB, rowA, colA, rowB, colB);
+                break;
+            case 3:
+                addkoro(matrixA, matrixB, rowA, colA, rowB, colB);
+                gunkoro(matrixA, matrixB, rowA, colA, rowB, colB);
+                break;
+            default:
+                System.out.println("Invalid choice! Please select 1, 2, or 3.");
+        }
+    }
+
+    // Method to create and populate a matrix
+    public static int[][] matrixBanao(Scanner scan, int row, int col, String name) {
+        int[][] matrix = new int[row][col];
+        System.out.println("Enter elements for Matrix " + name + ":");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print("[" + i + "][" + j + "]: ");
+                matrix[i][j] = scan.nextInt();
+            }
+        }
+        return matrix;
+    }
+
+    // Method to add two matrices and print the result
+    public static void addkoro(int[][] matrix1, int[][] matrix2, int rowA, int colA, int rowB, int colB) {
+        if (rowA == rowB && colA == colB) {
+            int[][] sum = new int[rowA][colA];
+            for (int i = 0; i < rowA; i++) {
+                for (int j = 0; j < colA; j++) {
+                    sum[i][j] = matrix1[i][j] + matrix2[i][j];
+                }
+            }
+            System.out.println("Addition result:");
+            printMatrix(sum, rowA, colA);
+        } else {
+            System.out.println("Matrix addition not possible. Dimensions must match.");
+        }
+    }
+
+    // Method to multiply two matrices and print the result
+    public static void gunkoro(int[][] a, int[][] b, int r1, int c1, int r2, int c2) {
+        if (c1 != r2) {
+            System.out.println("Matrix multiplication not possible. Column count of Matrix A must match row count of Matrix B.");
+        } else {
+            int[][] result = new int[r1][c2];
+            for (int i = 0; i < r1; i++) {
+                for (int j = 0; j < c2; j++) {
+                    for (int k = 0; k < c1; k++) {
+                        result[i][j] += a[i][k] * b[k][j];
+                    }
+                }
+            }
+            System.out.println("Multiplication result:");
+            printMatrix(result, r1, c2);
+        }
+    }
+
+    // Method to print a matrix
+    public static void printMatrix(int[][] matrix, int rows, int cols) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
