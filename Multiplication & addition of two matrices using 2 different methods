@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+public class ExecutionFile{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+     
+        // Input dimensions for the first matrix
+        System.out.print("Enter rows for Matrix A: ");
+        int rowA = scan.nextInt();
+        System.out.print("Enter columns for Matrix A: ");
+        int colA = scan.nextInt();
+        
+        // Input dimensions for the second matrix
+        System.out.print("Enter rows for Matrix B: ");
+        int rowB = scan.nextInt();
+        System.out.print("Enter columns for Matrix B: ");
+        int colB = scan.nextInt();
+        
+         // Create and Calling the method to populate both matrices
+        int[][] matrixA = matrixBanao(scan, rowA, colA, "A" );
+        int[][] matrixB = matrixBanao(scan, rowB, colB, "B" ); 
+        
+        //Calling method to add matrices & Printing the sum
+        addkoro(matrixA,matrixB, rowA, colA, rowB, colB);
+        //printkoro(matrixB, rowA, colB);
+        
+        //Calling method to Multiply Matrices
+        gunkoro(matrixA,matrixB, rowA, colA, rowB, colB);
+    }
+    //Method to take Matrix input
+    public static int[][] matrixBanao(Scanner scan, int row, int col, String name){
+    
+       int[][] matrix = new int[row][col]; // Create 2D array for storing matrix inputs
+        System.out.println("Matrix"+name);
+          for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+               System.out.print("["+i+"]["+j+"]: ");
+               matrix[i][j] = scan.nextInt();
+           }
+        }return matrix;
+    }
+    //Method to add 2 matrices & Print the sum
+    public static void addkoro(int[][] matrix1, int[][] matrix2, int rowA, int colA, int rowB, int colB){
+        
+        if(rowA==rowB && colA==colB){ //Condition to check for matrx addition
+            int[][] sum = new int[rowA][colA];
+              for(int i=0; i < rowA; i++){
+                for(int j = 0; j < colA; j++){
+                   sum[i][j] = matrix1[i][j] + matrix2[i][j]; //Adding 2 matrices
+           }
+       } //return sum;
+              
+         //Printing the sum of 2 matrices inside addkoro method
+           System.out.println("Addition result: ");
+            for(int i=0; i < rowA; i++){
+               for(int j = 0; j < colA; j++){
+                  System.out.print(" "+sum[i][j]);
+          }System.out.println();
+       }
+        }else         
+            System.out.println("Oops!! Row & Column number does not matches\n"
+                    + "Cannot perform matrix addition");
+    }
+    //Method to multiply matrices
+    public static void /* int[][] (used when value returned) */ gunkoro(int[][]a, int[][]b,
+            int r1, int c1, int r2, int c2 ){
+         
+        // Check matrix dimensions for multiplication
+        if(c1!=r2){
+            System.out.println("Oops!! Multiplication is not possible.\n"
+                    + "Column & Row number must be same");
+        } else {
+            int[][] result = new int[r1][c2];
+             System.out.println("Multiplication result: ");
+              for(int i = 0; i < r1; i++){
+                 for(int j = 0; j < c2; j++){
+                   for(int k = 0; k < c1; k++){
+                      result[i][j] += a[i][k] * b[k][j];
+                   }System.out.print(" "+result[i][j]);
+                }System.out.println();
+            }
+        }
+    }
+
+    
+}
