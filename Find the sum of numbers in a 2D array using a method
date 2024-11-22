@@ -3,40 +3,41 @@ import java.util.Scanner;
 public class ExecutionFile {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
-        // Input dimensions for the 2D array
-        System.out.print("Enter the number of rows: ");
+        
+        // Input the dimensions of the 2D array
+        System.out.print("Enter number of rows: ");
         int rows = scan.nextInt();
-        System.out.print("Enter the number of columns: ");
+        System.out.print("Enter number of columns: ");
         int cols = scan.nextInt();
-
-        // Initialize and input the 2D array
+        
+        // Create and calling method to populate the 2D array
+        int[][] array = createArray(scan, rows, cols);
+        
+        //Calling method calculate the sum of all elements in the array
+        int totalSum = calculateSum(array, rows, cols);
+        
+        // Print the sum
+        System.out.println("Sum of all elements in the 2D array: " + totalSum);
+    }
+     // Method to create and populate the 2D array
+    public static int[][] createArray(Scanner scan, int rows, int cols) {
         int[][] array = new int[rows][cols];
-        System.out.println("Enter the elements of the array:");
+        System.out.println("Enter elements of the array:");
+        
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                System.out.print("Enter element at [" + i + "][" + j + "]: ");
+                System.out.print("[" + i + "][" + j + "]: ");
                 array[i][j] = scan.nextInt();
             }
-        }
-
-        // Calculate the sum of elements using the method
-        int sum = calculateSum(array);
-
-        // Print the result
-        System.out.println("The sum of all elements in the 2D array is: " + sum);
-
-        scan.close(); // Close the scanner
-    }
-
-    // Method to calculate the sum of elements in a 2D array
-    public static int calculateSum(int[][] array) {
+        }return array;
+    } 
+    // Method to calculate & return the sum of all elements in the 2D array
+    public static int calculateSum(int[][] array, int rows, int cols) {
         int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                sum += array[i][j]; // Add each element to the sum
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                sum += array[i][j];
             }
-        }
-        return sum;
+        }return sum;
     }
 }
