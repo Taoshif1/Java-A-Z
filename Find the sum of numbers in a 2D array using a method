@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // Input dimensions for the 2D array
+        System.out.print("Enter the number of rows: ");
+        int rows = scan.nextInt();
+        System.out.print("Enter the number of columns: ");
+        int cols = scan.nextInt();
+
+        // Initialize and input the 2D array
+        int[][] array = new int[rows][cols];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Enter element at [" + i + "][" + j + "]: ");
+                array[i][j] = scan.nextInt();
+            }
+        }
+
+        // Calculate the sum of elements using the method
+        int sum = calculateSum(array);
+
+        // Print the result
+        System.out.println("The sum of all elements in the 2D array is: " + sum);
+
+        scan.close(); // Close the scanner
+    }
+
+    // Method to calculate the sum of elements in a 2D array
+    public static int calculateSum(int[][] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                sum += array[i][j]; // Add each element to the sum
+            }
+        }
+        return sum;
+    }
+}
