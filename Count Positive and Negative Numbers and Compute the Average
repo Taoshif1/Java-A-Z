@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int positiveCount = 0;
+        int negativeCount = 0;
+        double total = 0;
+        int count = 0;
+        
+        System.out.print("Enter integers, the input ends if it is 0:");
+        while (true) {
+            int number = input.nextInt();
+            if (number == 0) break; // End input if 0 is entered
+            
+            if (number > 0) 
+               positiveCount++;
+            else 
+               negativeCount++;
+            
+            total += number; // Add to total
+            count++;
+        }
+        
+        if (count == 0) {
+            System.out.println("No numbers were entered except 0.");
+        } else {
+            double average = total / count;
+            System.out.println("The number of positives is " + positiveCount);
+            System.out.println("The number of negatives is " + negativeCount);
+            System.out.println("The total is " + total);
+            System.out.printf("The average is %.2f\n", average);
+        }
+    }
+}
