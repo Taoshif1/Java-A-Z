@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class ExecutionFile {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter the number of students: ");
+        int numberOfStudents = scan.nextInt();
+        
+        String topStudent = "";
+        int highestScore = 0;
+        
+        for (int i = 1; i <= numberOfStudents; i++) {
+         System.out.print("Enter student " + i + "'s name: ");
+          String name = scan.next();
+           System.out.print("Enter " + name + "'s score: ");
+            int score = scan.nextInt();
+            
+            if (score > highestScore) {
+              highestScore = score;
+                topStudent = name;
+            }
+        }
+        System.out.println("The student with the highest score is " 
+                + topStudent + " with a score of " + highestScore);
+    }
+}
