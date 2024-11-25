@@ -1,0 +1,16 @@
+public class ExecutionFile {
+    public static void main(String[] args) {
+        System.out.println("Perfect numbers below 10,000 are:");
+        
+        for (int num = 1; num < 10000; num++) {
+            int sum = 0;
+            
+            // Find divisors and calculate their sum
+            for (int i = 1; i <= num / 2; i++) {
+                if (num % i == 0) sum += i;
+            }
+            
+            if (sum == num) System.out.println(num); // Perfect number
+        }
+    }
+}
