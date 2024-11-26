@@ -1,0 +1,85 @@
+//Constructor & methods inside java class(Student)
+
+package com.mycompany.lab5;
+
+    // Constructor
+public class Student {  
+    String name = " ";
+    String id = " ";
+    String mail = " ";
+    String dept = " ";
+    double cgpa = 0.0;
+
+    // Method to set student details using parameters
+    public void setDetails(String name, String id, String mail, String dept, double cgpa) {
+        this.name = name;
+        this.id = id;
+        this.mail = mail;
+        this.dept = dept;
+        this.cgpa = cgpa;
+    }
+     // Method to display student details
+    public static void viewInfo(Student student) {
+        System.out.println("Name: " + student.name);
+        System.out.println("ID: " + student.id);
+        System.out.println("Mail: " + student.mail);
+        System.out.println("Department: " + student.dept);
+        System.out.println("CGPA: " + student.cgpa);
+    }
+}
+//Student Class ends here-->
+
+//Main method starts here-->
+package com.mycompany.lab5;
+
+import java.util.Scanner;
+
+public class Lab5 {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // Create first student
+        Student s1 = new Student();
+        System.out.println("Enter details for Student 1:");
+        System.out.print("Enter your name: ");
+        String name1 = scan.nextLine();
+        System.out.print("Enter your ID: ");
+        String id1 = scan.nextLine();
+        System.out.print("Enter your Mail: ");
+        String mail1 = scan.nextLine();
+        System.out.print("Enter your Department: ");
+        String dept1 = scan.nextLine();
+        System.out.print("Enter your CGPA: ");
+        double cgpa1 = scan.nextDouble();
+        scan.nextLine(); // Consume newline character
+
+        // Set details for Student 1 using the method
+        s1.setDetails(name1, id1, mail1, dept1, cgpa1);
+
+        // Create second student
+        Student s2 = new Student();
+        System.out.println("\nEnter details for Student 2:");
+        System.out.print("Enter your name: ");
+        String name2 = scan.nextLine();
+        System.out.print("Enter your ID: ");
+        String id2 = scan.nextLine();
+        System.out.print("Enter your Mail: ");
+        String mail2 = scan.nextLine();
+        System.out.print("Enter your Department: ");
+        String dept2 = scan.nextLine();
+        System.out.print("Enter your CGPA: ");
+        double cgpa2 = scan.nextDouble();
+
+        // Set details for Student 2 using the method
+        s2.setDetails(name2, id2, mail2, dept2, cgpa2);
+
+        // Display details of Student 1 and Student 2
+        System.out.println("\nStudent 1 Details:");
+        Student.viewInfo(s1); // Method call
+
+        System.out.println("\nStudent 2 Details:");
+        Student.viewInfo(s2); // Method call
+
+    }
+}
