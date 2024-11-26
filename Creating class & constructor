@@ -1,0 +1,67 @@
+   //Constructor inside a java class 
+package com.mycompany.lab5;
+  
+     // Attributes
+    public class Student {  
+    String name = " ";
+    String Id = " ";
+    String mail = " ";
+    String dept = " " ;
+    long num = 0;
+
+}
+//Main method starts here-->
+package com.mycompany.lab5;
+import java.util.Scanner;
+
+public class Lab5 {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);    
+
+        // Create first student
+        Student s1 = new Student();
+        System.out.println("Enter details for Student 1:");
+        System.out.print("Enter your name: ");
+        s1.name = scan.nextLine();        
+        System.out.print("Enter your ID: ");
+        s1.Id = scan.nextLine();      
+        System.out.print("Enter your Mail: ");
+        s1.mail = scan.nextLine();      
+        System.out.print("Enter your Department: ");
+        s1.dept = scan.nextLine();
+        System.out.print("Enter your Number: ");
+        s1.num = scan.nextLong();
+        scan.nextLine();
+        
+        // Create second student
+        Student s2 = new Student();
+        System.out.println("\nEnter details for Student 2:");
+        System.out.println();
+        System.out.println("Enter your name: ");
+        s2.name = scan.nextLine();        
+        System.out.println("Enter your ID: ");
+        s2.Id = scan.nextLine();      
+        System.out.print("Enter your Mail: ");
+        s2.mail = scan.nextLine();      
+        System.out.print("Enter your Department: ");
+        s2.dept = scan.nextLine();
+        System.out.print("Enter your Number: ");
+        s2.num = scan.nextLong();
+        scan.nextLine();
+
+        // Display students' details
+        System.out.println("\nStudent 1 Details:");
+        System.out.println("Name: "+s1.name); 
+        System.out.println("ID: "+s1.Id);
+        System.out.println("Mail: "+s1.mail);
+        System.out.println("Dept: "+s1.dept);
+        System.out.println("Number: "+s1.num);
+        
+        System.out.println("Name: "+s2.name); 
+        System.out.println("ID: "+s2.Id);
+        System.out.println("Mail: "+s2.mail);
+        System.out.println("Dept: "+s2.dept);
+        System.out.println("Number: "+s2.num);
+    }
+}
