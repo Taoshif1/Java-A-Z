@@ -1,0 +1,62 @@
+// Rectangle class starts here-->
+
+package com.mycompany.lab6;
+
+public class Rectangle {
+    
+    double width;
+    double height;
+
+    // Default constructor
+    Rectangle() {
+        this.width = 1;
+        this.height = 1;
+    }
+
+    // Parameterized constructor
+    Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Method to calculate area
+    double getArea() {
+        return width * height;
+    }
+
+    // Method to calculate perimeter
+    double getPerimeter() {
+        return 2 * (width + height);
+    }
+}
+// Rectangle class ends here-->
+
+// Main method starts here-->
+
+package com.mycompany.lab6;
+
+//import java.util.Scanner;
+
+public class Lab6 {
+
+    public static void main(String[] args) {
+ 
+       // Create two rectangle objects
+        Rectangle rect1 = new Rectangle(4, 40);
+        Rectangle rect2 = new Rectangle(3.5, 35.9);
+
+        // Display details of rectangle 1
+        System.out.println("Rectangle 1:");
+        System.out.println("Width: " + rect1.width);
+        System.out.println("Height: " + rect1.height);
+        System.out.println("Area: " + rect1.getArea());
+        System.out.println("Perimeter: " + rect1.getPerimeter());
+
+        // Display details of rectangle 2
+        System.out.println("\nRectangle 2:");
+        System.out.println("Width: " + rect2.width);
+        System.out.println("Height: " + rect2.height);
+        System.out.println("Area: " + rect2.getArea());
+        System.out.println("Perimeter: " + rect2.getPerimeter());
+    }  
+}
