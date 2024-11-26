@@ -1,0 +1,69 @@
+//Creating constructor inside a java class
+package com.mycompany.lab5;
+
+    //Constructor
+    public class Student {  
+    String name = " ";
+    String Id = " ";
+    String mail = " ";
+    String dept = " " ;
+    long num = 0;
+
+    //Method for displaying
+    public void viewInfo(){
+            
+        System.out.println("\n\nName: "+name); 
+        System.out.println("ID: "+Id);
+        System.out.println("Mail: "+mail);
+        System.out.println("Dept: "+dept);
+        System.out.println("Number: "+num);      
+    }
+}
+//Main method starts here-->
+package com.mycompany.lab5;
+import java.util.Scanner;
+
+public class Lab5 {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);    
+
+        // Create first student
+        Student s1 = new Student();
+        System.out.println("Enter details for Student 1:");
+        System.out.print("Enter your name: ");
+        s1.name = scan.nextLine();        
+        System.out.print("Enter your ID: ");
+        s1.Id = scan.nextLine();      
+        System.out.print("Enter your Mail: ");
+        s1.mail = scan.nextLine();      
+        System.out.print("Enter your Department: ");
+        s1.dept = scan.nextLine();
+        System.out.print("Enter your Number: ");
+        s1.num = scan.nextLong();
+        scan.nextLine();
+        
+        // Create second student
+        Student s2 = new Student();
+        System.out.println("\nEnter details for Student 2:");
+        System.out.println();
+        System.out.println("Enter your name: ");
+        s2.name = scan.nextLine();        
+        System.out.println("Enter your ID: ");
+        s2.Id = scan.nextLine();      
+        System.out.print("Enter your Mail: ");
+        s2.mail = scan.nextLine();      
+        System.out.print("Enter your Department: ");
+        s2.dept = scan.nextLine();
+        System.out.print("Enter your Number: ");
+        s2.num = scan.nextLong();
+        scan.nextLine();
+
+        // Calling method tod isplay students' details
+        System.out.print("\nStudent 1 Details:");
+        s1.viewInfo();
+        System.out.print("\nStudent 2 Details:");
+        s2.viewInfo();
+
+    }
+}
