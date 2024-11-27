@@ -36,6 +36,42 @@ This repository includes the following topics:
    - File Input/Output (Planned)
    
 
+🔢 Problem Categorization
+Here is the problem categorization based on my progress and labs:
+
+Lab 2 (Problem 1-12)
+
+Basic Syntax and Loops
+Conditional Statements
+Fundamental Java Exercises
+Lab 1 (Problem 13-24)
+
+Arrays and String Manipulation
+Basic Input/Output Handling
+Lab 3 (Problem 25-46)
+
+Advanced Arrays
+String Functions
+Object-Oriented Programming (Classes, Objects, and Encapsulation)
+Pattern Printing (Problem 47-55)
+
+Triangle Patterns
+Reverse Patterns
+Binary and Star Patterns
+Lab 4 (Problem 56-65)
+
+Multidimensional Arrays
+Matrix Operations
+String Functions
+Problems from the Book (Problem 66-69)
+
+Unique Java Problems from Reference Books
+Lab 5 (Problem 70-75)
+
+Inheritance
+Polymorphism
+Advanced Method Handling
+
 ---
 
 ## 🚀 How to Run the Programs
