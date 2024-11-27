@@ -1,0 +1,47 @@
+//Java class named Stock starts-->
+
+package com.mycompany.lab6;
+
+public class Stock {
+    
+    String symbol;
+    String name;
+    double previousClosingPrice;
+    double currentPrice;
+
+    // Constructor
+    public Stock(String symbol, String name) {
+        this.symbol = symbol;
+        this.name = name;
+    }
+    
+    // Method to calculate percentage change
+    double getChangePercent() {
+        return ((currentPrice - previousClosingPrice) / previousClosingPrice) * 100;
+    }    
+}
+//Java class named Stock ends-->
+
+//Main method begins-->
+
+package com.mycompany.lab6;
+
+public class Lab6 {
+
+    public static void main(String[] args) {
+         // Create stock object
+        Stock stock = new Stock("ORCL", "Oracle Corporation");
+
+        // Set prices
+        stock.previousClosingPrice = 34.5;
+        stock.currentPrice = 34.35;
+
+        // Display stock details and price change percentage
+        System.out.println("Stock Symbol: " + stock.symbol);
+        System.out.println("Stock Name: " + stock.name);
+        System.out.println("Previous Closing Price: " + stock.previousClosingPrice);
+        System.out.println("Current Price: " + stock.currentPrice);
+        System.out.println("Price Change Percentage: " + stock.getChangePercent() + "%");
+      }
+   
+}
