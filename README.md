@@ -48,10 +48,8 @@ Lab 3 (Problem 25-46)
 Loop and array in Java
 
 
-Advance Pattern Printing (Problem 47-55)
-Triangle Patterns
-Reverse Patterns
-Binary and Star Patterns
+(Problem 47-55)
+Advance Pattern Printing (Triangle Patterns, Reverse Patterns, Binary and Star Patterns)
 
 Lab 4 (Problem 56-65)
 Methods in Java.
@@ -59,12 +57,12 @@ Multidimensional Arrays
 Matrix Operations
 String Functions
 
-Problems from the Book (Problem 66-69)
-Unique Java Problems from Reference Book- Y. Daniel Liang - Introduction to Java Programming
+(Problem 66-69) 
+Unique Problems from the Java Reference Book- Y. Daniel Liang - Introduction to Java Programming
 
 Lab 5 (Problem 70-75)
 Objects and Classes in Java.
-Advanced Method Handling
+
 
 ---
 
