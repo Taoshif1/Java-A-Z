@@ -36,8 +36,7 @@ This repository includes the following topics:
    - File Input/Output (Planned)
    
 
-🔢 Problem Categorization \n
-Here is the problem categorization based on my progress and versity lab works:
+🔢Here is the problem categorization based on my progress and versity lab works:
 
 Lab 1 (Problem 13-24)
 Decision making and branching in Java.
