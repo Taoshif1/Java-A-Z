@@ -8,6 +8,34 @@ Welcome to my **Java Programming Repository**! This repository contains Java pro
 
 This repository includes the following topics:
 
+🔢Here is the problem categorization based on my progress and versity lab works:
+
+▫️ Lab 1 (Problem 13-24)
+Decision making and branching in Java.
+
+▫️ Lab 2 (Problem 1-12)
+String and Decision making
+
+▫️ Lab 3 (Problem 25-46)
+Loop and array in Java
+
+
+▫️ (Problem 47-55)
+Advance Pattern Printing (Triangle Patterns, Reverse Patterns, Binary and Star Patterns)
+
+▫️ Lab 4 (Problem 56-65)
+Methods in Java.
+Multidimensional Arrays
+Matrix Operations
+String Functions
+
+▫️ (Problem 66-69) 
+Unique Problems from the Java Reference Book- Y. Daniel Liang - Introduction to Java Programming
+
+▫️ Lab 5 (Problem 70-75)
+Objects and Classes in Java.
+
+
 1. **Basic Syntax**  
    - Variables, Data Types, and Operators
    - Input/Output Handling
@@ -36,32 +64,6 @@ This repository includes the following topics:
    - File Input/Output (Planned)
    
 
-🔢Here is the problem categorization based on my progress and versity lab works:
-
-Lab 1 (Problem 13-24)
-Decision making and branching in Java.
-
-Lab 2 (Problem 1-12)
-String and Decision making
-
-Lab 3 (Problem 25-46)
-Loop and array in Java
-
-
-(Problem 47-55)
-Advance Pattern Printing (Triangle Patterns, Reverse Patterns, Binary and Star Patterns)
-
-Lab 4 (Problem 56-65)
-Methods in Java.
-Multidimensional Arrays
-Matrix Operations
-String Functions
-
-(Problem 66-69) 
-Unique Problems from the Java Reference Book- Y. Daniel Liang - Introduction to Java Programming
-
-Lab 5 (Problem 70-75)
-Objects and Classes in Java.
 
 
 ---
