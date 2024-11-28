@@ -10,8 +10,7 @@ This repository includes the following topics:
 
 🔢Here is the problem categorization based on my progress and versity lab works:
 
-▫️ Lab 1 (Problem 13-24)
-Decision making and branching in Java.
+▫️ Lab 1 (Problem 13-24) Decision making and branching in Java.
 
 ▫️ Lab 2 (Problem 1-12)
 String and Decision making
