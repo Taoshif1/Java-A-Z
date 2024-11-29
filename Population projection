@@ -1,0 +1,16 @@
+public class ExecutionFile {
+    public static void main(String[] args) {
+        int currentPopulation = 312032486;
+        int secondsInYear = 365 * 24 * 60 * 60;
+        
+        int births = secondsInYear / 7;
+        int deaths = secondsInYear / 13;
+        int immigrants = secondsInYear / 45;
+        int netIncrease = births + immigrants - deaths;
+        
+        for (int year = 1; year <= 5; year++) {
+            currentPopulation += netIncrease;
+            System.out.println("Population after year " + year + ": " + currentPopulation);
+        }
+    }
+}
