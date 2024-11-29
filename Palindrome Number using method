@@ -14,11 +14,13 @@ public class ExecutionFile {
             System.out.println(number + " is not a palindrome"); // If false, print the result
         }
     }
+
     /**
      * Method to check if a number is a palindrome or not.
      * A number is a palindrome if it reads the same backward as forward.
      * @return true if the number is a palindrome, false otherwise
-     */
+     ***/
+
     public static boolean palindrome(int number) {
         int reversed = 0; // To store the reversed number
         int original = number; // Store the original number to compare later
