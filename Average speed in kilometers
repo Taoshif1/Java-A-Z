@@ -1,0 +1,11 @@
+public class ExecutionFile {
+    public static void main(String[] args) {
+        double distanceInMiles = 24; // Distance in miles
+        double timeInHours = 1 + 40.0 / 60 + 35.0 / 3600; // Convert hours, minutes, and seconds to hours
+        double distanceInKm = distanceInMiles * 1.6; // Convert miles to kilometers
+        
+        double speedInKph = distanceInKm / timeInHours;
+        
+        System.out.println("Average speed in kilometers per hour: " + speedInKph);
+    }
+}
