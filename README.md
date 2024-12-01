@@ -29,7 +29,7 @@ Matrix Operations
 String Functions
 
 ▫️ (Problem 66-69) 
-Unique Problems from the Java Reference Book- Y. Daniel Liang - Introduction to Java Programming
+Unique Problems from the Reference Book- Y. Daniel Liang - Introduction to Java Programming
 
 ▫️ Lab 5 (Problem 70-75)
  Objects and Classes in Java.
