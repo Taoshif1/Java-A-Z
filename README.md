@@ -32,7 +32,7 @@ String Functions
 Unique Problems from the Java Reference Book- Y. Daniel Liang - Introduction to Java Programming
 
 ▫️ Lab 5 (Problem 70-75)
-Objects and Classes in Java.
+ Objects and Classes in Java.
 
 
 1. **Basic Syntax**  
