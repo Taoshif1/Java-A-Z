@@ -1,0 +1,135 @@
+package taoshiflex.lab6;
+
+public class Lab6 {
+
+    public static void main(String[] args) {
+
+        Person person = new Person("Forash Uddin Sir", "Dhaka", 734567899, "fusir@outlook.com");
+
+        Student student = new Student("Gazi Taoshif", "151 Bailey Road", 1738949857 , "taoshif2@gmail.com", Student.SOPHOMORE);
+
+        Employee employee = new Employee("Rasel Mahmud", "789 Rampura", 1234567890 , "rasel@yahoo.com", "Room- 101(FUB)", 30000, "15-04-2022");
+
+        Faculty faculty = new Faculty("Sadika Sneha Maam", "101 Narayongonj", 444555666, "sdis@gmail.com", "Room- 215", 50000, "31-12-2019", 8 , "Lecturer");
+
+        Staff staff = new Staff("Alomgir Hossain", "202/A Saydabad", 333444555, "alomgir@gmail.com", "Room- 303(AB3)", 20000, "01-01-2021", "Manager");
+
+        System.out.println(person.toString());
+        System.out.println(student.toString());
+        System.out.println(employee.toString());
+        System.out.println(faculty.toString());
+        System.out.println(staff.toString());
+    }
+}
+
+←—Person.java—---->
+
+package taoshiflex.lab6;
+
+class Person {
+    
+    private String name;
+    private String address;
+    private double phone;
+    private String email;
+    
+public Person(String name, String address, double phone, String email) {
+
+    this.name = name;
+    this.address = address;
+    this.phone = phone;
+    this.email = email;
+    }
+    
+    @Override
+      public String toString() {
+        return "Parent-Class: Person, Name: " + name + ", " + address + ", " + phone + ", " + email;
+    }   
+}
+
+←—Student.java—---->
+
+package taoshiflex.lab6;
+
+class Student extends Person {
+    
+    public static final String FRESHMAN = "Freshman";
+    public static final String SOPHOMORE = "Sophomore";
+    public static final String JUNIOR = "Junior";
+    public static final String SENIOR = "Senior";
+    
+    private String status;
+
+    public Student(String name, String address, double phone, String email, String status) {
+        super(name, address, phone, email);
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Child-Class: Student, " + super.toString() + ", Status: " + status;
+    }   
+}
+
+←—Employee.java—---->
+
+package taoshiflex.lab6;
+
+public class Employee extends Person {
+       
+    private String office;
+    private double salary;
+    private String dateHired;
+    
+public Employee(String name, String address, double phone, String email, String office, double salary, String dateHired) {
+    super(name, address, phone, email);
+        this.office = office;
+        this.salary = salary;
+        this.dateHired = dateHired;
+    }
+
+    @Override
+    public String toString() {
+        return "Child-Class: Employee, " + super.toString() + ", Office: " + office + ", Salary: " + salary + "TK, Date Hired: " + dateHired;
+    }
+}
+
+←—Faculty.java—---->
+
+package taoshiflex.lab6;
+
+class Faculty extends Employee {
+    
+    private int officeHours;
+    private String rank;
+
+    public Faculty(String name, String address, double phone, String email, String office, double salary, String dateHired, int officeHours, String rank) {
+        super(name, address, phone, email, office, salary, dateHired);
+        this.officeHours = officeHours;
+        this.rank = rank;
+    }
+
+    @Override
+    public String toString() {
+        return "Grand-Child-Class: Faculty, " + super.toString() + ", Office Hours: " + officeHours + " Hours, Rank: " + rank;
+    }
+}
+
+←—Staff.java—---->
+
+package taoshiflex.lab6;
+
+public class Staff extends Employee {
+ 
+    private String title;
+
+    public Staff(String name, String address, double phone, String email, String office, double salary, String dateHired, String title) {
+        super(name, address, phone, email, office, salary, dateHired);
+        this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "Grand-Child-Class: Staff, " + super.toString() + ", Title: " + title;
+    }
+}
