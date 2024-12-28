@@ -1,0 +1,199 @@
+←—Parent Class---------->
+
+package taoshiflex.lab6;
+
+import java.util.Date;
+
+// Base class for geometric objects
+class GeometricObject {
+    private String color;
+    private boolean filled;
+    private Date dateCreated;
+
+    // Default constructor
+    public GeometricObject() {
+        this.color = "white";
+        this.filled = false;
+        this.dateCreated = new Date();
+    }
+
+    // Constructor with color and filled
+    public GeometricObject(String color, boolean filled) {
+        this.color = color;
+        this.filled = filled;
+        this.dateCreated = new Date();
+    }
+
+    // Getters and setters
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public boolean isFilled() {
+        return filled;
+    }
+
+    public void setFilled(boolean filled) {
+        this.filled = filled;
+    }
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    @Override
+    public String toString() {
+        return "GeometricObject [color= " + color + ", filled= " + filled + ", dateCreated= " + dateCreated + "]";
+    }
+}
+
+←—Circle Sub-Class---------->
+
+package taoshiflex.lab6;
+
+// Subclass representing a circle
+class Circle extends GeometricObject {
+    private double radius;
+
+    // Default constructor
+    public Circle() {
+        super();
+        this.radius = 1.0;
+    }
+
+    // Constructor with radius
+    public Circle(double radius) {
+        super();
+        this.radius = radius;
+    }
+
+    // Constructor with all properties
+    public Circle(double radius, String color, boolean filled) {
+        super(color, filled);
+        this.radius = radius;
+    }
+
+    // Getters and setters
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    // Calculate area
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Calculate perimeter
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+
+    // Get diameter
+    public double getDiameter() {
+        return 2 * radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle [radius=" + radius + ", " + super.toString() + "]";
+    }
+}
+
+
+←—Rectangle Sub-Class---------->
+
+package taoshiflex.lab6;
+
+// Subclass representing a rectangle
+class Rectangle extends GeometricObject {
+    private double width;
+    private double height;
+
+    // Default constructor
+    public Rectangle() {
+        super();
+        this.width = 1.0;
+        this.height = 1.0;
+    }
+
+    // Constructor with width and height
+    public Rectangle(double width, double height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+
+    // Constructor with all properties
+    public Rectangle(double width, double height, String color, boolean filled) {
+        super(color, filled);
+        this.width = width;
+        this.height = height;
+    }
+
+    // Getters and setters
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    // Calculate area
+    public double getArea() {
+        return width * height;
+    }
+
+    // Calculate perimeter
+    public double getPerimeter() {
+        return 2 * (width + height);
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle [width=" + width + ", height=" + height + ", " + super.toString() + "]";
+    }
+}
+
+←—Main method---------->
+
+package taoshiflex.lab6;
+
+// Main class for testing
+public class Lab6Task2 {
+    public static void main(String[] args) {
+
+        // Test GeometricObject
+        GeometricObject geo = new GeometricObject("blue", true);
+        System.out.println(geo);
+
+        // Test Circle
+        Circle circle = new Circle(5.0, "red", true);
+        System.out.println(circle);
+        System.out.println("Circle area: " + circle.getArea());
+        System.out.println("Circle perimeter: " + circle.getPerimeter());
+        System.out.println("Circle diameter: " + circle.getDiameter());
+
+        // Test Rectangle
+        Rectangle rectangle = new Rectangle(4.0, 6.0, "green", false);
+        System.out.println(rectangle);
+        System.out.println("Rectangle area: " + rectangle.getArea());
+        System.out.println("Rectangle perimeter: " + rectangle.getPerimeter());
+    }
+}
