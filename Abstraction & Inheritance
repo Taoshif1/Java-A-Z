@@ -1,0 +1,94 @@
+
+package taoshiflex.lab7;
+
+// Abstract class Shape
+abstract class Shape {
+    protected String color; // Common field
+
+    // Constructor
+    public Shape(String color) {
+        this.color = color;
+    }
+
+    // Abstract method to be implemented by subclasses
+    public abstract double getArea();
+
+    // Non-abstract method
+    @Override
+    public String toString() {
+        return "Color: " + color;
+    }
+}
+
+
+package taoshiflex.lab7;
+
+// Subclass: Rectangle
+class Rectangle extends Shape {
+    private int length;
+    private int width;
+
+    // Constructor
+    public Rectangle(String color, int length, int width) {
+        super(color); // Call the constructor of Shape
+        this.length = length;
+        this.width = width;
+    }
+
+    // Implement abstract method
+    @Override
+    public double getArea() {
+        return length * width; // Area of rectangle
+    }
+
+    // Override toString
+    @Override
+    public String toString() {
+        return "Rectangle [Length: " + length + ", Width: " + width + ", " + super.toString() + "]";
+    }
+}
+
+
+package taoshiflex.lab7;
+
+// Subclass: Triangle
+class Triangle extends Shape {
+    private int base;
+    private int height;
+
+    // Constructor
+    public Triangle(String color, int base, int height) {
+        super(color); // Call the constructor of Shape
+        this.base = base;
+        this.height = height;
+    }
+
+    // Implement abstract method
+    @Override
+    public double getArea() {
+        return 0.5 * base * height; // Area of triangle
+    }
+
+    // Override toString
+    @Override
+    public String toString() {
+        return "Triangle [Base: " + base + ", Height: " + height + ", " + super.toString() + "]";
+    }
+}
+
+package taoshiflex.lab7;
+
+// Test Program
+public class Lab7 {
+    public static void main(String[] args) {
+        // Create a Rectangle object
+        Shape rectangle = new Rectangle("Red", 10, 5);
+        System.out.println(rectangle.toString());
+        System.out.println("Area: " + rectangle.getArea());
+
+        // Create a Triangle object
+        Shape triangle = new Triangle("Blue", 8, 6);
+        System.out.println(triangle.toString());
+        System.out.println("Area: " + triangle.getArea());
+    }
+}
