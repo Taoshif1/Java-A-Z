@@ -1,0 +1,173 @@
+abstract class BankAccount {
+    private String accNumber;
+    private String accHolderName;
+    private double balance;
+
+
+    public String getAccNumber() {
+        return accNumber;
+    }
+    public void setAccNumber(String accNumber) {
+        this.accNumber = accNumber;
+    }
+    public String getAccHolderName() {
+        return accHolderName;
+    }
+    public void setAccHolderName(String accHolderName) {
+        this.accHolderName = accHolderName;
+    }
+    public double getBalance() {
+        return balance;
+    }
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+    abstract void deposit(double amount);
+    abstract void withdraw(double amount);
+
+
+    public void displayAccountDetails() {
+        System.out.println("Account number: " + accNumber);
+        System.out.println("Account holder name: " + accHolderName);
+        System.out.println("Account balance: " + balance);
+    }
+}
+
+
+class SavingsAccount extends BankAccount {
+    private double interestRate;
+
+
+    public double getInterestRate() {
+        return interestRate;
+    }
+    public void setInterestRate(double interestRate) {
+        this.interestRate = interestRate;
+    }
+    public void deposit(double amount) {
+        if (amount < 0) {
+            System.out.println("Can't deposit money");
+        }
+        else {
+            setBalance(getBalance() + amount);
+        }
+    }
+    public void withdraw(double amount) {
+        if (amount > getBalance()) {
+            System.out.println("Insufficient balance");
+        }
+        else {
+            setBalance(getBalance() - amount);
+        }
+    }
+    public void calculateYearlyInterest() {
+        double interest = getBalance() * (interestRate / 100);
+        System.out.println("Interest rate per year: " + interest);
+    }
+}
+
+
+class FixedDeposit extends SavingsAccount {
+    private int termInYears;
+
+
+    public FixedDeposit(int termInYears, double balance, double interestRate) {
+        this.termInYears = termInYears;
+        setBalance(balance);
+        setInterestRate(interestRate);
+    }
+
+
+    public void calculateMaturityAmount() {
+        double maturity = getBalance() * (Math.pow(1 + (getInterestRate() / 100) , termInYears));
+        System.out.println("Maturity amount: " + maturity);
+    }
+}
+
+
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        SavingsAccount SavingsAccount = new SavingsAccount();
+
+
+        System.out.print("Enter account number: ");
+        String accNum = scanner.nextLine();
+        SavingsAccount.setAccNumber(accNum);
+
+
+        System.out.print("enter account holder name: ");
+        String accHolName = scanner.nextLine();
+        SavingsAccount.setAccHolderName(accHolName);
+
+
+        System.out.print("Enter interest rate: ");
+        double intRate = scanner.nextDouble();
+        SavingsAccount.setInterestRate(intRate);
+
+
+        while (true) {
+            System.out.println();
+            System.out.print("1 for deposit.");
+            System.out.print("\n2 for withdraw.");
+            System.out.print("\n3 for account details.");
+            System.out.print("\n4 for yearly interest rate.");
+            System.out.print("\n5 for fixed deposit.");
+            System.out.print("\n6 for exit.");
+            System.out.println();
+
+
+            System.out.print("\nEnter your choice: ");
+            int choice = scanner.nextInt();
+
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter deposit amount: ");
+                    double deposit = scanner.nextDouble();
+                    SavingsAccount.deposit(deposit);
+                    break;
+ 
+                case 2:
+                    System.out.print("Enter withdrawl amount: ");
+                    double withdraw = scanner.nextDouble();
+                    SavingsAccount.withdraw(withdraw);
+                    break;
+               
+                case 3:
+                    SavingsAccount.displayAccountDetails();
+                    break;
+               
+                case 4:
+                    SavingsAccount.calculateYearlyInterest();
+                    break;
+               
+                case 5:
+                    System.out.print("Enter fixed deposit year: ");
+                    int year = scanner.nextInt();
+                    System.out.print("Enter amount for fixed deposit: ");
+                    double fixamn = scanner.nextDouble();
+                    System.out.print("Enter interest rate for fixed deposit: ");
+                    double fixInt = scanner.nextDouble();
+
+
+                    FixedDeposit fixedDeposit = new FixedDeposit(year, fixamn, fixInt);
+                    fixedDeposit.calculateMaturityAmount();
+                    break;
+
+
+                case 6:
+                    System.out.print("\nExiting the program");
+                    scanner.close();
+                    return;
+
+
+                default:
+                    System.out.println("Invalid choice.");
+            }  
+        }
+    }
+}
