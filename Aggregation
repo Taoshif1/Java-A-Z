@@ -1,0 +1,91 @@
+package taoshiflex.lab7;
+
+public class Guardian {
+    public String name; // Public variable
+    public String relation; // Public variable
+
+    public Guardian(String name, String relation) {
+        this.name = name;
+        this.relation = relation;
+    }
+
+    public void displayGuardianInfo() {
+        System.out.println("Guardian Name: " + name);
+        System.out.println("Relation: " + relation);
+    }
+}
+
+
+package taoshiflex.lab7;
+
+// Student.java
+public class Student {
+    public String name; // Public variable
+    public int id;      // Public variable
+    public String dept; // Public variable
+    public Guardian guardian; // Association with Guardian
+
+    public Student(String name, int id, String dept, Guardian guardian) {
+        this.name = name;
+        this.id = id;
+        this.dept = dept;
+        this.guardian = guardian;
+    }
+
+    public void supervision(Faculty faculty) {
+        System.out.println("Supervised by Faculty: " + faculty.name);
+    }
+
+    public void displayStudentInfo() {
+        System.out.println("Student Name: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Department: " + dept);
+        if (guardian != null) {
+            guardian.displayGuardianInfo();
+        }
+    }
+}
+
+
+package taoshiflex.lab7;
+
+// Faculty.java
+public class Faculty {
+    public String name; // Public variable
+    public int id;      // Public variable
+    public String dept; // Public variable
+
+    public Faculty(String name, int id, String dept) {
+        this.name = name;
+        this.id = id;
+        this.dept = dept;
+    }
+
+    public void teaches(Student student) {
+        System.out.println("Faculty " + name + " teaches Student: " + student.name);
+    }
+}
+
+
+package taoshiflex.lab7;
+
+// Test Program
+public class Lab7 {
+public static void main(String[] args) {
+        // Create a Guardian
+        Guardian guardian = new Guardian("John Doe", "Father");
+
+        // Create a Student associated with the Guardian
+        Student student = new Student("Taoshif", 101, "CSE", guardian);
+
+        // Create a Faculty
+        Faculty faculty = new Faculty("Shadman", 201, "CSE");
+
+        // Display Information
+        student.displayStudentInfo();
+        student.supervision(faculty);
+
+        // Faculty teaching the student
+        faculty.teaches(student);
+    }
+}
