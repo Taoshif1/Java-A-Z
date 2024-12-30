@@ -1,0 +1,71 @@
+package taoshiflex.lab7;
+
+public class Student {
+    
+    int age;
+
+    // Constructor
+    public Student(int age) {
+        this.age = age;
+    }
+
+    // Display method
+    void display() {
+        System.out.println("Student Age: " + age);
+    }
+}
+
+
+
+package taoshiflex.lab7;
+
+// TeachingAssistant class inherits from Student and implements Employee
+class TeachingAssistant extends Student implements Employee {
+    int id;
+    String name;
+    int salary;
+
+    // Constructor
+    public TeachingAssistant(int age, int id, String name, int salary) {
+        super(age); // Call to Student constructor
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    @Override
+    public void display() {
+        // Override and provide implementation for both Student and Employee details
+        System.out.println("Teaching Assistant Details:");
+        System.out.println("Age: " + age);
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + salary);
+    }
+}
+
+
+package taoshiflex.lab7;
+
+// 1. Interface Employee
+interface Employee {
+    int designation = 0; // Default variable (implicitly public static final)
+
+    void display(); // Abstract method
+}
+
+
+package taoshiflex.lab7;
+
+public class Lab7 {
+
+    public static void main(String[] args) {
+        // Create a TeachingAssistant object
+        TeachingAssistant ta = new TeachingAssistant(20, 101, "Taoshif", 400000);
+
+        // Call display method
+        ta.display();
+    }
+}
+
+
