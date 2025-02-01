@@ -34,6 +34,24 @@ Unique Problems from the Reference Book- Y. Daniel Liang - Introduction to Java 
 ▫️ Lab 5 (Problem 70-75)
  Objects and Classes in Java.
 
+ ▫️(Problem 76-80)
+ Unique Problems from the Reference Book- Y. Daniel Liang - Introduction to Java Programming.
+
+ ▫️ Lab 6 (Problem 81-83)
+ Inheritance
+
+  ▫️ Lab 7 (Problem 84-87)
+Abstract class & Interface and Association
+
+   ▫️ Lab 8 (Problem 88-92)
+ Exception
+
+   ▫️ Lab 9 (Problem 93-101)
+Generics and files in Java
+
+   ▫️ Lab 10 (Problem 102)
+File in Java
+
 
 1. **Basic Syntax**  
    - Variables, Data Types, and Operators
