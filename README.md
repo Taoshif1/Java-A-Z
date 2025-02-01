@@ -10,46 +10,46 @@ This repository includes the following topics:
 
 🔢Here is the problem categorization based on my progress and versity lab works:
 
-▫️ Lab 1 (Problem 13-24) Decision making and branching in Java.
+▫️ (Problem 13-24) Lab 1- Decision making and branching in Java.
 
-▫️ Lab 2 (Problem 1-12)
+▫️(Problem 1-12) Lab 2- 
 String and Decision making
 
-▫️ Lab 3 (Problem 25-46)
+▫️(Problem 25-46) Lab 3- 
 Loop and array in Java
 
 
-▫️ (Problem 47-55)
+▫️(Problem 47-55) -
 Advance Pattern Printing (Triangle Patterns, Reverse Patterns, Binary and Star Patterns)
 
-▫️ Lab 4 (Problem 56-65)
+▫️(Problem 56-65) Lab 4- 
 Methods in Java.
 Multidimensional Arrays
 Matrix Operations
 String Functions
 
-▫️ (Problem 66-69) 
+▫️(Problem 66-69)- 
 Unique Problems from the Reference Book- Y. Daniel Liang - Introduction to Java Programming
 
-▫️ Lab 5 (Problem 70-75)
+▫️(Problem 70-75) Lab 5- 
  Objects and Classes in Java.
 
- ▫️(Problem 76-80)
+ ▫️(Problem 76-80) -
  Unique Problems from the Reference Book- Y. Daniel Liang - Introduction to Java Programming.
 
- ▫️ Lab 6 (Problem 81-83)
+ ▫️(Problem 81-83) Lab 6- 
  Inheritance
 
-  ▫️ Lab 7 (Problem 84-87)
+  ▫️(Problem 84-87) Lab 7- 
 Abstract class & Interface and Association
 
-   ▫️ Lab 8 (Problem 88-92)
+   ▫️(Problem 88-92) Lab 8- 
  Exception
 
-   ▫️ Lab 9 (Problem 93-101)
+   ▫️(Problem 93-101) Lab 9- 
 Generics and files in Java
 
-   ▫️ Lab 10 (Problem 102)
+   ▫️(Problem 102) Lab 10- 
 File in Java
 
 
