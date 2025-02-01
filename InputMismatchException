@@ -1,0 +1,28 @@
+package taoshiflex.lab8;
+
+import java.util.*;
+
+public class Lab8 {
+public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in );
+        
+    try {
+        System.out.println("Enter First Number: ");
+        int num1 = scan.nextInt();
+
+        System.out.println("Enter Second Number: ");
+        int num2 = scan.nextInt();
+        
+        System.out.println("Result= "+ (num1+num2));
+        }
+
+    catch(ArithmeticException e){
+        System.out.println("Wrong Input"); 
+    }
+    
+    catch(InputMismatchException e){
+        System.out.println("Invalid Input");    
+    }
+        
+  }
+}
