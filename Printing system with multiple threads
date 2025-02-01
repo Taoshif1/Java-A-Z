@@ -1,0 +1,50 @@
+<-------Printer Class----------->
+
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+class Printer {
+    public synchronized void print(String document) {
+        System.out.println(Thread.currentThread().getName() + " is printing: " + document);
+        try {
+            Thread.sleep(2000); // Simulate print time delay
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(document + " printing completed.");
+    }
+}
+
+<-------PrintJob Class----------->
+
+class PrintJob implements Runnable {
+    private Printer printer;
+    private String document;
+
+    public PrintJob(Printer printer, String document) {
+        this.printer = printer;
+        this.document = document;
+    }
+
+    @Override
+    public void run() {
+        printer.print(document);
+    }
+}
+
+<-------Main PrintSystemTest Class----------->
+
+public class PrintSystemTest {
+    public static void main(String[] args) {
+        Printer sharedPrinter = new Printer();
+        
+        Thread t1 = new Thread(new PrintJob(sharedPrinter, "Document1"), "Thread-1");
+        Thread t2 = new Thread(new PrintJob(sharedPrinter, "Document2"), "Thread-2");
+        Thread t3 = new Thread(new PrintJob(sharedPrinter, "Document3"), "Thread-3");
+        
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
