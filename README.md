@@ -52,6 +52,12 @@ Generics and files in Java
    ▫️(Problem 102) Lab 10- 
 File in Java
 
+   ▫️(Problem 103-104) Lab 11- 
+Socket Programming
+
+   ▫️(Problem 105-110) Lab 12- 
+Multithreading
+
 
 1. **Basic Syntax**  
    - Variables, Data Types, and Operators
@@ -78,7 +84,8 @@ File in Java
    - GUI
    - Nested Loops and Patterns
    - Exception Handling
-   - File Input/Output (Planned)
+   - File Input/Output
+   - Socket & multithreading
    
 
 
