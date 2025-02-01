@@ -1,0 +1,21 @@
+package taoshiflex.lab9;
+import java.io.File;
+public class Lab9 {
+
+    public static void main(String[] args) {
+        File directory = new File("C:\\Users\\User\\Desktop\\Exception");
+
+        if (directory.isDirectory()) {
+            String[] files = directory.list();
+            if (files != null) {
+                for (String file : files) {
+                    System.out.println(file);
+                }
+            } else {
+                System.out.println("The directory is empty.");
+            }
+        } else {
+            System.out.println("The specified path is not a directory.");
+        }
+    }
+}
