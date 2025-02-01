@@ -1,0 +1,52 @@
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+class PrintOddEven {
+    private int count = 1;
+    private static final int MAX = 10;
+
+    public synchronized void printOdd() {
+        while (count < MAX) {
+            while (count % 2 == 0) {
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.print(count + " ");
+            count++;
+            notify();
+        }
+    }
+
+    public synchronized void printEven() {
+        while (count <= MAX) {
+            while (count % 2 == 1) {
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.print(count + " ");
+            count++;
+            notify();
+        }
+    }
+}
+
+<---------Main class-------------------->
+
+public class ThreadOddEvenTest {
+    public static void main(String[] args) {
+        PrintOddEven printer = new PrintOddEven();
+        
+        Thread threadA = new Thread(printer::printOdd);
+        Thread threadB = new Thread(printer::printEven);
+        
+        threadA.start();
+        threadB.start();
+    }
+}
