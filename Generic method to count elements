@@ -1,0 +1,64 @@
+package taoshiflex.lab9;
+
+import java.util.ArrayList;
+import java.util.function.Predicate;
+
+public class Lab9 {
+    public static void main(String[] args) {
+
+        // Example usage with Integer elements
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+
+        // Count odd integers
+        System.out.println("Odd Numbers Count: " + count(numbers, n -> n % 2 != 0));
+
+        // Count prime numbers
+        System.out.println("Prime Numbers Count: " + count(numbers, Lab9::isPrime));
+
+        // Example usage with String elements
+        ArrayList<String> words = new ArrayList<>();
+        words.add("madam");
+        words.add("apple");
+        words.add("racecar");
+        words.add("hello");
+
+        // Count palindromes
+        System.out.println("Palindromes Count: " + count(words, Lab9::isPalindrome));
+    }
+
+    // Generic method to count elements satisfying a property
+    public static <E> int count(ArrayList<E> list, Predicate<E> property) {
+        int count = 0;
+        for (E element : list) {
+            if (property.test(element)) {
+                count++; // Increment count if the element satisfies the property
+            }
+        }
+        return count;
+    }
+
+    // Helper method to check if a number is prime
+    public static boolean isPrime(int number) {
+        if (number <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) return false;
+        }
+        return true;
+    }
+
+    // Helper method to check if a string is a palindrome
+    public static boolean isPalindrome(String str) {
+        int start = 0, end = str.length() - 1;
+        while (start < end) {
+            if (str.charAt(start) != str.charAt(end)) return false;
+            start++;
+            end--;
+        }
+        return true;
+    }
+}
