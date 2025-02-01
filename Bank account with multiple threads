@@ -1,0 +1,61 @@
+,------BankAccount Class---------->
+
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+class BankAccount {
+    private double balance;
+
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+
+    public synchronized void withdraw(double amount) {
+        if (balance >= amount) {
+            System.out.println(Thread.currentThread().getName() + " is withdrawing " + amount);
+            balance -= amount;
+            System.out.println("Remaining balance: " + balance);
+        } else {
+            System.out.println(Thread.currentThread().getName() + " attempted to withdraw " + amount + " but insufficient balance.");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+<------WithdrawTask Class------------------->
+
+class WithdrawTask implements Runnable {
+    private BankAccount account;
+    private double amount;
+
+    public WithdrawTask(BankAccount account, double amount) {
+        this.account = account;
+        this.amount = amount;
+    }
+
+    @Override
+    public void run() {
+        account.withdraw(amount);
+    }
+}
+
+
+<---------Main Class---------------->
+
+public class BankAccountTest {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000);
+        
+        Thread t1 = new Thread(new WithdrawTask(account, 500), "Thread-1");
+        Thread t2 = new Thread(new WithdrawTask(account, 700), "Thread-2");
+        Thread t3 = new Thread(new WithdrawTask(account, 300), "Thread-3");
+        
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
