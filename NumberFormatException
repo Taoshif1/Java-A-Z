@@ -1,0 +1,35 @@
+package taoshiflex.lab8;
+
+import java.util.Scanner;
+
+public class Lab8 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter a binary string: ");
+        String binaryString = scan.nextLine();
+
+        try {
+            int decimalValue = bin2Dec(binaryString);
+            System.out.println("Decimal value: " + decimalValue);
+        } 
+        catch (NumberFormatException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        scan.close();
+    }
+    
+    public static int bin2Dec(String binaryString) throws NumberFormatException {
+      // Check if the string is a valid binary string
+        for (char c : binaryString.toCharArray()) {
+            if (c != '0' && c != '1') {
+                throw new NumberFormatException("Input is not a binary string.");
+            }
+        }
+
+        // Convert binary string to decimal
+        return Integer.parseInt(binaryString, 2);
+    }
+
+}
