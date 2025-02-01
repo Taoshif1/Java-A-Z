@@ -1,0 +1,34 @@
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+class NumberPrinter implements Runnable {
+    private int start, end;
+
+    public NumberPrinter(int start, int end) {
+        this.start = start;
+        this.end = end;
+    }
+
+    @Override
+    public void run() {
+        for (int i = start; i <= end; i++) {
+            System.out.print(i + " ");
+        }
+    }
+}
+
+
+<-------Main Class-------------------------->
+
+public class MultiThreadNumberPrinting {
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(new NumberPrinter(1, 3));
+        Thread thread2 = new Thread(new NumberPrinter(4, 7));
+        Thread thread3 = new Thread(new NumberPrinter(8, 10));
+        
+        thread1.start();
+        thread2.start();
+        thread3.start();
+    }
+}
