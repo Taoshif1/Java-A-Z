@@ -1,0 +1,86 @@
+package taoshiflex.practice;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Practice {
+    public static void main(String[] args) {
+        
+        // Input: Number of students
+        try (Scanner in = new Scanner(System.in)) {
+            // Input: Number of students
+            System.out.print("Enter the number of students: ");
+            int n = in.nextInt();
+            in.nextLine(); // Consume the leftover newline
+            
+            // File paths
+            String directoryPath = "E:\\University";
+            String filePath = directoryPath + "\\Student.txt";
+        
+            // ArrayList to store student details
+            ArrayList<String> studentDataList = new ArrayList<>();
+            
+            try {
+                // Create directory
+                File directory = new File(directoryPath);
+                if (!directory.exists()) {
+                    directory.mkdir();
+                    System.out.println("Directory created: " + directoryPath);
+                }
+            
+                // Generate student data
+                Random random = new Random();
+                Set<String> uniqueIDs = new HashSet<>();
+                
+                for (int i = 1; i <= n; i++) {
+                    String firstName = "FirstName" + i;
+                    String lastName = "LastName" + i;
+                    int yearOfAdmission = random.nextInt(2024 - 2012 + 1) + 2012;
+                    
+                    String id;
+                    do {
+                        int randomPart = 1000 + random.nextInt(9000); // Random 4-digit number
+                        id = yearOfAdmission + String.valueOf(randomPart);
+                    } while (uniqueIDs.contains(id)); // Ensure ID uniqueness
+                    
+                    uniqueIDs.add(id);
+                    
+                    // Add student details to the list
+                    String studentData = firstName + " " + lastName + " " + yearOfAdmission + " " + id;
+                    studentDataList.add(studentData);
+                }
+                
+                try ( // Write to file using BufferedWriter
+                        BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+                    for (String studentData : studentDataList) {
+                        writer.write(studentData);
+                        writer.newLine();
+                    }
+                }
+                
+                System.out.println("Student data written successfully to " + filePath);
+                
+                // Read from file using BufferedReader
+                System.out.println("\nReading data from file:");
+                try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                }
+                
+            } catch (IOException e) {
+                System.out.println("An error occurred: " + e.getMessage());
+            }
+        }
+    }
+}    
