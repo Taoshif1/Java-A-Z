@@ -1,0 +1,34 @@
+package taoshiflex.lab9;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class Lab9 {
+    public static void main(String[] args) {
+
+        // Example usage
+        ArrayList<Integer> originalList = new ArrayList<>();
+        originalList.add(1);
+        originalList.add(2);
+        originalList.add(2);
+        originalList.add(3);
+        originalList.add(4);
+        originalList.add(4);
+        originalList.add(5);
+        originalList.add(5);
+        originalList.add(5);
+        originalList.add(5);
+        originalList.add(6);
+        originalList.add(6);
+
+        ArrayList<Integer> uniqueList = removeDuplicates(originalList);
+        System.out.println("Original List: " + originalList);
+        System.out.println("List with Duplicates Removed: " + uniqueList);
+    }
+
+    // Method to remove duplicates
+    public static <E> ArrayList<E> removeDuplicates(ArrayList<E> list) {
+        HashSet<E> set = new HashSet<>(list);     // Use HashSet to store unique elements
+        return new ArrayList<>(set);                       // Convert HashSet back to ArrayList and return
+    }
+}
