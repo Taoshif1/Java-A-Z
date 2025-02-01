@@ -1,0 +1,26 @@
+package taoshiflex.lab9;
+
+public class Lab9 {
+    public static void main(String[] args) {
+
+        // Example usage with an Integer array
+        Integer[] numbers = {1, 2, 3, 4, 5, 9, 7, 10, 5};
+        System.out.println("Maximum Element: " + max(numbers));
+
+    }
+
+    // Generic method to find the maximum element in an array
+    public static <E extends Comparable<E>> E max(E[] list) {
+        if (list == null || list.length == 0) {
+            return null;  // Return null if the array is empty
+        }
+        E maxElement = list[0];  // Assume the first element is the largest
+        for (E element : list) {
+            if (element.compareTo(maxElement) > 0) {
+                maxElement = element;  // Update maxElement if a larger one is found
+            }
+        }
+        return maxElement;
+    }
+}
+
