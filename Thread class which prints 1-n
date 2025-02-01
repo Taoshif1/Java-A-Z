@@ -1,0 +1,34 @@
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+class PrintNumbers implements Runnable {
+    private int n;
+
+    public PrintNumbers(int n) {
+        this.n = n;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i + " ");
+        }
+    }
+}
+
+<--------Main Class--------------->
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        int n = 10; // Change this to the desired number
+        
+        Thread t1 = new Thread(new PrintNumbers(n));
+        Thread t2 = new Thread(new PrintNumbers(n));
+        Thread t3 = new Thread(new PrintNumbers(n));
+        
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
