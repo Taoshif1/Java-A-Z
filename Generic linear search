@@ -1,0 +1,31 @@
+package taoshiflex.lab9;
+
+import java.util.ArrayList;
+
+public class Lab9 {
+    public static void main(String[] args) {
+
+        // Example usage with Integer
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(5);
+
+        int index = linearSearch(list, 3);
+        System.out.println("Element found at index: " + index);
+    }
+
+    // Generic linear search method
+    public static <E> int linearSearch(ArrayList<E> list, E key) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals(key)) {
+                return i;  // Return the index if element is found
+            }
+        }
+        return -1;  // Return -1 if element is not found
+
+    }
+}
