@@ -1,0 +1,34 @@
+package taoshiflex.lab9;
+
+import java.util.ArrayList;
+
+public class Lab9 {
+    public static void main(String[] args) {
+
+        // Example usage
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(3);
+        list.add(5);
+        list.add(2);
+        list.add(4);
+        list.add(6);
+
+        System.out.println("Maximum Element in Range: " + maxInRange(list, 1, 5));
+    }
+
+    // Generic method to find the maximal element in a range
+    public static <E extends Comparable<E>> E maxInRange(ArrayList<E> list, int begin, int end) {
+        if (list == null || list.size() == 0 || begin < 0 || end > list.size() || begin >= end) {
+            return null;  // Return null for invalid input
+        }
+        E maxElement = list.get(begin);  // Assume the first element in the range is the largest
+        for (int i = begin + 1; i < end; i++) {
+            if (list.get(i).compareTo(maxElement) > 0) {
+                maxElement = list.get(i);  // Update maxElement if a larger one is found
+            }
+        }
+        return maxElement;
+    }
+}
+
