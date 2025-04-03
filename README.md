@@ -81,7 +81,6 @@ Multithreading
    - Encapsulation, Inheritance, Polymorphism
 
 5. **Advanced Concepts**  
-   - GUI
    - Nested Loops and Patterns
    - Exception Handling
    - File Input/Output
